@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+
+:root {
+    --side-background: #0EA5E9;
+    --buttons: #0284C7;
+    --main-content-background: #e2e8f0;
+    --cards-left-lines: #FACC15;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: roboto;
+}
+/* we set the main container with display grid in order to set-up our divs */
+.container {
+    display: grid;
+    grid-template-columns: 245px repeat(3, 1fr);
+    grid-template-rows: [row1-start] 115px [row1-end] auto;
+    border: 1px solid black;
+}
+
+/* containers child are set up with their columns and rows */
+.sidebar {
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+    border: 1px solid black;
+}
+
+.header {
+    grid-column: 2 / 5;
+    grid-row: row1-start / 2;
+    border: 1px solid black;
+}
+
+.main-content {
+    grid-column: 2 / 5;
+    grid-row: 2 / auto;
+    border: 1px solid black;
+}
+
+/*let's start to set up sidebar childs */
+
+.dashboard-title {
+    height: 54px;
+    border: 1px solid black;
+}
+
+.nav-items {
+    height: 212px;
+    border: 1px solid black;
+}
+
+ul li {
+    line-height: 2;
+}
