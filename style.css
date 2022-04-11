@@ -20,7 +20,7 @@ body {
 .container {
     display: grid;
     grid-template-columns: 245px repeat(3, 1fr);
-    grid-template-rows: [row1-start] 115px [row1-end] auto;
+    grid-template-rows: [row1-start] 126px [row1-end] auto;
     border: 1px solid black;
 }
 
@@ -28,13 +28,13 @@ body {
 .sidebar {
     grid-column: 1 / 2;
     grid-row: 1 / -1;
-    border: 1px solid black;
 }
 
 .header {
     grid-column: 2 / 5;
     grid-row: row1-start / 2;
-    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .main-content {
@@ -45,16 +45,108 @@ body {
 
 /*let's start to set up sidebar childs */
 
-.dashboard-title {
-    height: 54px;
-    border: 1px solid black;
+.dashboard-title { height: 54px; }
+
+.icon-box {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    gap: 15px;
+    cursor: pointer;
 }
 
-.nav-items {
-    height: 212px;
-    border: 1px solid black;
+.icon-box img { width: 20px; }
+
+.support-items { margin-top: 25px; }
+
+img[src="icons/view-dashboard.png"] { width: 30px; }
+
+/* header's section set up */
+
+.input-zone {
+    width: 60%;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-ul li {
-    line-height: 2;
+img[src="icons/magnify.png"] {
+    width: 20px;
+    cursor: pointer;
 }
+
+input[type=text] {
+    width: 400px;
+    height: 25px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--main-content-background);
+    padding-left: 14px;
+}
+
+.right-zone {
+    width: calc(100% - 65%);
+    height: 55px;
+}
+
+.right-zone ul li img[src="icons/pikachu.png"] {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.right-zone ul {
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+img[src="icons/bell-ring.png"] { width: 20px; }
+
+.profile-zone {
+    width: 60%;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    gap: 16px;
+    line-height: 1.2;
+}
+
+.profile-zone img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.profile-zone p { font-size: 14px; }
+
+.profile-zone p span {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.button-zone {
+    width: calc(100% - 60%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-zone button {
+    width: 80px;
+    height: 30px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--buttons);
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+/* pseudoclass */
+
+input:focus { outline: none; }
