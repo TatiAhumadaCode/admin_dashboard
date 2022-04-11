@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
 
 :root {
-    --side-background: #0EA5E9;
+    --side-background: #1992d4;
     --buttons: #0284C7;
     --main-content-background: #e2e8f0;
     --cards-left-lines: #FACC15;
@@ -20,14 +20,14 @@ body {
 .container {
     display: grid;
     grid-template-columns: 245px repeat(3, 1fr);
-    grid-template-rows: [row1-start] 126px [row1-end] auto;
-    border: 1px solid black;
+    grid-template-rows: [row1-start] 126px [row1-end] 517px;
 }
 
 /* containers child are set up with their columns and rows */
 .sidebar {
     grid-column: 1 / 2;
-    grid-row: 1 / -1;
+    grid-row: 1 / 3;
+    background-color: var(--side-background);
 }
 
 .header {
@@ -39,8 +39,11 @@ body {
 
 .main-content {
     grid-column: 2 / 5;
-    grid-row: 2 / auto;
-    border: 1px solid black;
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 50%);
+    background-color: var(--main-content-background);
 }
 
 /*let's start to set up sidebar childs */
@@ -52,6 +55,7 @@ body {
     align-items: center;
     padding: 15px;
     gap: 15px;
+    color: white;
     cursor: pointer;
 }
 
@@ -147,6 +151,131 @@ img[src="icons/bell-ring.png"] { width: 20px; }
     font-weight: 500;
     cursor: pointer;
 }
-/* pseudoclass */
+
+/* main-container's grids */
+.cards-container {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    display: grid; /* we set a grid into the grid cards-container */
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: 50px repeat(3, 2fr);
+    justify-items: center;
+}
+
+.announcements {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
+
+.trendings {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+
+.cards-container > h4 {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    justify-self: left;
+    align-self: center;
+    padding-left: 22px;
+}
+
+.cards-box {
+    width: 320px;
+    height: 145px;
+    padding: 18px 20px;
+    border-radius: 10px;
+    border: none;
+    border-left: 6px solid var(--cards-left-lines);
+    background-color: white;
+    -webkit-box-shadow: 0px 4px 12px -1px rgba(0,0,0,0.72); 
+box-shadow: 0px 4px 12px -1px rgba(0,0,0,0.72);
+}
+
+.cards-box > h4 {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.cards-box > p {
+    font-size: 12px;
+    color: #636363;
+}
+
+.cards-box span {
+    margin-top: 20px;
+    display: flex;
+    justify-content: right;
+    gap: 20px;
+}
+
+.cards-box span img { width: 20px; }
+
+.container-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-box > h4 {
+    margin-right: auto;
+    padding: 5px 0px 5px 50px;
+}
+
+.child-box {
+    width: 270px;
+    min-height: 230px;
+    padding: 0px 16px;
+    border-radius: 10px;
+    background-color: white;
+    -webkit-box-shadow: 3px 7px 10px -7px #000000; 
+    box-shadow: 3px 7px 10px -7px #000000;
+
+}
+
+.child-box span {
+    display: flex;
+    flex-direction: column;
+    margin: 8px 0px;
+    gap: 10px;
+    border-bottom: 1px solid var(--main-content-background);
+    line-height: 1.3;
+}
+
+.child-box span h5 { font-size: 12px; }
+
+.child-box span p {
+    font-size: 10px;
+    color: #636363;
+    padding-bottom: 4px;
+}
+
+.users-box {
+    width: 270px;
+    height: 220px;
+    background-color: white;
+    border-radius: 10px;
+    -webkit-box-shadow: 3px 7px 10px -7px #000000; 
+    box-shadow: 3px 7px 10px -7px #000000;
+}
+
+.users-box span {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 8px 0px;
+    font-size: 12px;
+}
+
+.users-box span p > span {
+    color: #636363;
+}
+.users-box span img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* pseudoclasses */
 
 input:focus { outline: none; }
